@@ -3,12 +3,6 @@ pipeline{
         environment {
                 DB_PASSWORD = "password"
         }
-        stages{
-            stage('Git clone'){
-                steps{
-                    sh "if cd repo; then git pull; else git clone https://gitlab.com/qacdevops/chaperootodo_client; fi"
-                }
-            }
             stage('docker install'){
                 steps{
                     sh "curl https://get.docker.com | sudo bash"
