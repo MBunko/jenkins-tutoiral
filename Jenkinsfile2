@@ -3,6 +3,7 @@ pipeline{
         environment {
                 DB_PASSWORD = "password"
         }
+        stages{
             stage('docker install'){
                 steps{
                     sh "curl https://get.docker.com | sudo bash"
