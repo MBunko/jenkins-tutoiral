@@ -6,7 +6,7 @@ pipeline{
         stages{
             stage('Git clone'){
                 steps{
-                    sh "git clone https://gitlab.com/qacdevops/chaperootodo_client"
+                    sh "if cd repo; then git pull; else git clone https://gitlab.com/qacdevops/chaperootodo_client; fi"
                 }
             }
             stage('docker install'){
