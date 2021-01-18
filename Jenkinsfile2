@@ -15,7 +15,6 @@ pipeline{
                     sudo chmod +x /usr/local/bin/docker-compose
                 }
             }
-        stages{
             stage('Deploy'){
                 steps{
                     sh "sudo docker-compose pull && sudo -E DB_PASSWORD=\${DB_PASSWORD} docker-compose up -d"
